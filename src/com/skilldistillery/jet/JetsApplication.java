@@ -1,9 +1,5 @@
 package com.skilldistillery.jet;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -15,8 +11,6 @@ public class JetsApplication {
 		JetsApplication jetsApp = new JetsApplication();
 
 		jetsApp.launch();
-
-//		userMenu();`
 
 	}
 
@@ -99,7 +93,7 @@ public class JetsApplication {
 		int range = input.nextInt();
 		System.out.println("How much does your jet cost?");
 		long price = input.nextLong();
-		
+
 		Jet userJet = new PassengerPlane(model, speed, range, price);
 		airfield.addjet(userJet);
 	}
@@ -142,11 +136,9 @@ public class JetsApplication {
 		List<Jet> jetList = airfield.getJets();
 		Jet jet = null;
 		for (int i = 0; i < jetList.size(); i++) {
-			if (jetList != null) {
-				if (jetList.get(i).getRange() > farthestFlyer) {
-					farthestFlyer = jetList.get(i).getRange();
-					jet = jetList.get(i);
-				}
+			if (jetList.get(i).getRange() > farthestFlyer) {
+				farthestFlyer = jetList.get(i).getRange();
+				jet = jetList.get(i);
 			}
 		}
 		System.out.println(jet);
@@ -157,11 +149,9 @@ public class JetsApplication {
 		List<Jet> jetList = airfield.getJets();
 		Jet jet = null;
 		for (int i = 0; i < jetList.size(); i++) {
-			if (jetList != null) {
-				if (jetList.get(i).getSpeed() > fastestFlyer) {
-					fastestFlyer = jetList.get(i).getSpeed();
-					jet = jetList.get(i);
-				}
+			if (jetList.get(i).getSpeed() > fastestFlyer) {
+				fastestFlyer = jetList.get(i).getSpeed();
+				jet = jetList.get(i);
 			}
 		}
 		System.out.println(jet);
@@ -176,13 +166,9 @@ public class JetsApplication {
 
 	private void listFleet() {
 		for (int i = 0; i < airfield.getJets().size(); i++) {
-			System.out.println("" + i + " "+ airfield.getJets().get(i));
-			
+			System.out.println("" + i + " " + airfield.getJets().get(i));
+
 		}
-//		for (Jet jet : airfield.getJets()) {
-//			System.out.println(jet);
-//
-//		}
 
 	}
 
@@ -190,6 +176,7 @@ public class JetsApplication {
 		airfield = new Airfield();
 		Scanner input = new Scanner(System.in);
 		displayUserMenu(input);
+		input.close();
 
 	}
 
