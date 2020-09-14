@@ -7,6 +7,7 @@ public class PassengerPlane extends Jet {
 	}
 
 	public void fly() {
+		System.out.println("Please remain seated as we are about to hit some turbulance");
 
 	}
 
